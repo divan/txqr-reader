@@ -94,9 +94,6 @@ class QRScannerController: UIViewController {
             
         }
     }
-    
-    var lastSeenQR: TimeInterval = 0
-    var startRead: TimeInterval = 0
 }
 
 extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
@@ -116,10 +113,6 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
-            if startRead == 0 {
-                startRead = NSDate().timeIntervalSinceReferenceDate
-            }
-            
             // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barCodeObject!.bounds
@@ -132,18 +125,12 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                     print("Decode chunk error: \(error).")
                 }
                 
-                // calc time per frame
-                
-                let now = NSDate().timeIntervalSinceReferenceDate
-                let duration = (now - lastSeenQR)
-                lastSeenQR = NSDate().timeIntervalSinceReferenceDate
-
                 
                 let complete = decoder?.isCompleted()
                 let progress = decoder?.progress()
                 let speed = decoder?.speed()
-                print(speed)
-                let ms = duration * 1000
+                let readInterval = decoder?.readInterval()
+                print("Read interval", readInterval!)
                 
                 if complete! {
                     messageLabel.text = String(format: "Read complete! Speed: %@", speed!)
@@ -152,7 +139,7 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                     
                     ShowPreview(data: data)
                 } else {
-                    messageLabel.text = String(format: "%02d%% (%.0fms) [%@]", progress!, ms, speed!)
+                    messageLabel.text = String(format: "%02d%% [%@] (%dms)", progress!, speed!, readInterval!)
                     progressBar.setProgress(Float(progress!), animated: true)
                 }
             }
