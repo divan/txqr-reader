@@ -10,9 +10,7 @@ class QRScannerController: UIViewController {
     var decoder = TxqrNewDecoder()
 
     @IBOutlet var messageLabel:UILabel!
-    @IBOutlet var topbar: UIView!
-    @IBOutlet var progressBar: UIProgressView!
-    
+    @IBOutlet var topbar: UIView!    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,7 +138,6 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                     ShowPreview(data: data)
                 } else {
                     messageLabel.text = String(format: "%02d%% [%@] (%dms)", progress!, speed!, readInterval!)
-                    progressBar.setProgress(Float(progress!), animated: true)
                 }
             }
         }
