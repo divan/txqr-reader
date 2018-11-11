@@ -31,7 +31,10 @@
 - (BOOL)decodeChunk:(NSString*)data error:(NSError**)error;
 - (BOOL)isCompleted;
 - (long)progress;
+- (int64_t)readInterval;
 - (NSString*)speed;
+- (NSString*)totalSize;
+- (NSString*)totalTime;
 @end
 
 /**
