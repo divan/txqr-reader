@@ -1,0 +1,8 @@
+framework module "Txqr" {
+	header "ref.h"
+    header "Txqr.objc.h"
+    header "Universe.objc.h"
+    header "Txqr.h"
+
+    export *
+}
