@@ -128,10 +128,11 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                 let progress = decoder?.progress()
                 let speed = decoder?.speed()
                 let readInterval = decoder?.readInterval()
-                print("Read interval", readInterval!)
                 
                 if complete! {
-                    messageLabel.text = String(format: "Read complete! Speed: %@", speed!)
+                    let totalSize = decoder?.totalSize()
+                    let totalTime = decoder?.totalTime()
+                    messageLabel.text = String(format: "Read %@ in %@! Speed: %@", totalSize!, totalTime!, speed!)
                     let str = decoder?.data()
                     let data = Data(base64Encoded: str!)
                     

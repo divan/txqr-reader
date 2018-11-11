@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8690F5F821987233003B1223 /* txqr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690F5F721987233003B1223 /* txqr.framework */; };
+		8690F5FC219878D1003B1223 /* txqr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690F5FB219878D1003B1223 /* txqr.framework */; };
 		F4F09DB71DAF669400026BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F09DB61DAF669400026BB2 /* AppDelegate.swift */; };
 		F4F09DBC1DAF669400026BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBA1DAF669400026BB2 /* Main.storyboard */; };
 		F4F09DBE1DAF669400026BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBD1DAF669400026BB2 /* Assets.xcassets */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8690F5F721987233003B1223 /* txqr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = txqr.framework; sourceTree = "<group>"; };
+		8690F5FB219878D1003B1223 /* txqr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = txqr.framework; sourceTree = "<group>"; };
 		F4F09DB31DAF669400026BB2 /* txqr-reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "txqr-reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F09DB61DAF669400026BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F09DBB1DAF669400026BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8690F5F821987233003B1223 /* txqr.framework in Frameworks */,
+				8690F5FC219878D1003B1223 /* txqr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +45,7 @@
 			children = (
 				F4F09DB51DAF669400026BB2 /* txqr-reader */,
 				F4F09DB41DAF669400026BB2 /* Products */,
-				8690F5F721987233003B1223 /* txqr.framework */,
+				8690F5FB219878D1003B1223 /* txqr.framework */,
 			);
 			sourceTree = "<group>";
 		};
